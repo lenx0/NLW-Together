@@ -1,0 +1,33 @@
+.button {
+    margin-top: 64px;
+    height: 50px;
+    border: radius 8px;
+    font-weight: 500;
+    background: #835afd;
+    color: #fff;
+    padding: 0 32px; // para nunca ficar grudado nas laterais
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer; //faz com que o mouse fique com uma maozinha quando passar pelo botão
+    border: 0;
+
+    transition: filter 0.2s; // tempo que demorará para voltar o botão na cor normal depois de escurecer ao passar o mouse em cima
+
+    img {
+        margin-right: 8px;
+    }
+
+    &:not(:disabled):hover {
+        //aplica-se apenas se o botão não estiver desabilitado
+        filter: brightness(0.9); // quando passar o mouse por cima do botão, ele escurece um pouco.
+    }
+
+    &:disabled {
+        //quando o botão estiver desabilitado
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
